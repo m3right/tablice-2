@@ -16,6 +16,11 @@ public class Main {
             min = tablica[i];
       return min;
    }
+  public static float average(int[] tablica, int rozmiar) {
+      float average = (float)suma(tablica,rozmiar)/rozmiar;
+    return average;
+      
+   }
    
    public static void wczytaj_tablice(int[] tablica, int rozmiar) throws IOException {
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -31,6 +36,22 @@ public class Main {
    }
 
    public static void main(String[] args) {
+     try{
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        int r;
+        System.out.println("Podaj rozmiar: ");
+        r = Integer.parseInt(in.readLine());
+        int[] t = new int[r];
+        wczytaj_tablice(t, r);
+        System.out.println("To jest suma: " + suma(t,r));
+        System.out.println("To jest minimum: " + minimum(t,r));
+        System.out.println("To jest srednia: " + average(t,r));
+     }
+     catch(IOException e)
+     {
+     }
+     
+     
       
    }
 }
